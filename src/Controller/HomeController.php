@@ -14,18 +14,18 @@ class HomeController extends AbstractController
         return $this->render('home.html.twig');
     }
 
-    #[Route('/', '', methods: ['GET'])]
+    #[Route('/compte', 'Home.compte', methods: ['GET'])]
     public function compte(): Response
     {
         return $this->render('compte.html.twig');
     }
-    #[Route('/', '', methods: ['GET'])]
+    #[Route('/administation', 'Home.administration', methods: ['GET'])]
     public function administation(): Response
     {
         return $this->render('administration.html.twig');
     }
-    #[Route('/', '', methods: ['GET'])]
-    public function collection(): Response
+    #[Route('/catlogue', 'Home.catlogue', methods: ['GET'])]
+    public function catlogue(): Response
     {
         return $this->render('catlogue.html.twig');
     }
