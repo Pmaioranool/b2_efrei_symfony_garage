@@ -1,3 +1,6 @@
 body {
-    background-color: skyblue;
+  background: linear-gradient(grey, #000);
+}
+body:hover {
+  background: rgb(17, 10, 215);
 }

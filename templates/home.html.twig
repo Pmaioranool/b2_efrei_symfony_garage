@@ -2,11 +2,28 @@
 
 {% block title %}Page d'accueil
 {% endblock %}
+{% block head %}
+	 <script src="https://unpkg.com/alpinejs" defer></script>
 
-{% block header %}
-	<h1>Bienvenue sur ma page d'accueil</h1>
 {% endblock %}
+{% block body %}
+	{% block content %}Bienvenue sur ma page d'accueil</h1>
+	<template x-data="{open:1, toggleOpen(){this.open=1-this.open}}" @click="toggleOpen()" x-if="open">
+		<button @click="toggleOpen()">show</button>
 
-{% block content %}
-	<p>Ceci est le contenu spécifique de ma page d'accueil.</p>
-{% endblock %}
+		<section>true</section>
+
+
+		<p>ceci est une page d'accueil</p>
+		<h1>Bienvenue sur ma page d'accueil</h1>
+		<p>ceci est une page d'accueil</p>
+		<h1>Bienvenue sur ma page d'accueil</h1>
+		<p>ceci est une page d'accueil</p>
+		<h1>Bienvenue sur ma page d'accueil</h1>
+		<p>ceci est une page d'accueil</p>
+		<h1>Bienvenue sur ma page d'accueil</h1>
+		<p>ceci est une page d'accueil</p>
+		<h1>Bienvenue sur ma page d'accueil</h1>
+		<p>ceci est une page d'accueil</p>
+	</template>
+{% endblock %}{% endblock %}
