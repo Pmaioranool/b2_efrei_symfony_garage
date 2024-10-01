@@ -1,6 +1,10 @@
 body {
-  background: linear-gradient(grey, #000);
+  background: #ddd;
 }
-body:hover {
-  background: rgb(17, 10, 215);
+.card.mb-3 {
+  width: 20%;
+  margin: 0.5% 4% 0 4%;
+}
+section {
+  display: flex;
 }
