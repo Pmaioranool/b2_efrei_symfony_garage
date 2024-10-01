@@ -3,10 +3,44 @@
 {% block title %}Page d'accueil
 {% endblock %}
 
-{% block header %}
-	<h1>Bienvenue sur ma page d'accueil</h1>
+{% block head %}
+	 <script src="https://unpkg.com/alpinejs" defer></script>
 {% endblock %}
 
-{% block content %}
-	<p>Ceci est le contenu spécifique de ma page d'accueil.</p>
+{% macro card(img) %}
+	<div class="card mb-3">
+		<h3 class="card-header">Card header</h3>
+		<div class="card-body">
+			<h5 class="card-title">Special title treatment</h5>
+			<h6 class="card-subtitle text-muted">Support card subtitle</h6>
+		</div>
+		<img src="{{ img }}" alt="Mon image">
+
+		<div class="card-body">
+			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		</div>
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item">Cras justo odio</li>
+			<li class="list-group-item">Dapibus ac facilisis in</li>
+			<li class="list-group-item">Vestibulum at eros</li>
+		</ul>
+		<div class="card-body">
+			<a href="{{ path('home.item') }}" class="card-link">Card link</a>
+		</div>
+		<div class="card-footer text-muted">
+			2 days ago
+		</div>
+	</div>
+	<div class="card"></div>
+{% endmacro %}
+
+{% block section %}
+	<section>
+
+
+		{{ _self.card(asset('assets/images/img_voiture1.webp')) }}
+		{{ _self.card(asset('assets/images/tuture.webp')) }}
+		{{ _self.card(asset('assets/images/bmw.webp')) }}
+		{{ _self.card(asset('assets/images/voiture_3d.webp')) }}
+	</section>
 {% endblock %}
