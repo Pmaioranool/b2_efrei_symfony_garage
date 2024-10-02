@@ -1,10 +1,23 @@
 body {
-  background: #ddd;
+  background: linear-gradient(0.25turn, #db7910, #000, #db7910);
 }
+
 .card.mb-3 {
-  width: 20%;
-  margin: 0.5% 4% 0 4%;
+  width: calc(
+    25% - 4%
+  ); /* Pour avoir 4 cartes par ligne avec un espace de 4% entre elles */
+  height: auto;
+  margin: 2%;
 }
+
+img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover; /* Les images remplissent le conteneur sans déformation */
+}
+
 section {
   display: flex;
+  flex-wrap: wrap; /* Les cartes vont se répartir sur plusieurs lignes si nécessaire */
+  justify-content: space-evenly; /* Espacement égal entre les cartes */
 }
