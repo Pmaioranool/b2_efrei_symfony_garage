@@ -3,9 +3,12 @@
 namespace App\Controller;
 
 use App\Repository\ArticleRepository;
+use App\Repository\RateRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request; // Utilisation correcte de la classe Request
 
 class HomeController extends AbstractController
 {
@@ -15,11 +18,6 @@ class HomeController extends AbstractController
         return $this->render('home.html.twig');
     }
 
-    #[Route('/compte', name: 'home.compte', methods: ['GET'])]
-    public function compte(): Response
-    {
-        return $this->render('compte.html.twig');
-    }
 
     #[Route('/administration', name: 'home.administration', methods: ['GET'])]
     public function administration(): Response
@@ -28,9 +26,14 @@ class HomeController extends AbstractController
     }
 
     #[Route('/catalogue', name: 'home.catalogue', methods: ['GET'])]
-    public function catalogue(ArticleRepository $articleRepository): Response
+    public function catalogue(ArticleRepository $Repository, PaginatorInterface $paginator, Request $request): Response
     {
-        $articles = $articleRepository->findAll();
+        $articles = $paginator->paginate(
+            $Repository->findAll(),
+            $request->query->getInt('page', 1),
+            8
+        );
+
         return $this->render('catalogue.html.twig', [
             'articles' => $articles
         ]);
@@ -43,8 +46,11 @@ class HomeController extends AbstractController
     }
 
     #[Route('/avis', name: 'home.avis', methods: ['GET'])]
-    public function avis(): Response
+    public function avis(RateRepository $rateRepository): Response
     {
-        return $this->render('avis.html.twig');
+        $rates = $rateRepository->findAll();
+        return $this->render('avis.html.twig', [
+            'rates' => $rates
+        ]);
     }
 }
