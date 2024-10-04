@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Formulaire
+{% endblock %}
+{% block section %}
+	<section>
+		<form>
+			<fieldset>
+				<legend>Nous contacter</legend>
+
+			</div>
+			<div>
+				<label for="exampleInputEmail1" class="form-label mt-4">Adresse email</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+				<small id="emailHelp" class="form-text text-muted">Nous ne partagerons jamais votre adresse e-mail avec qui que ce soit.
+				</small>
+			</div>
+
+
+			<div>
+				<label for="exampleSelect2" class="form-label mt-4">Quel services vous voulez?</label>
+				<select multiple="" class="form-select" id="exampleSelect2">
+					<option>Achat d'une voiture</option>
+					<option>Vente d'un véhicule</option>
+					<option>Révision</option>
+					<option>Réparation</option>
+
+				</select>
+			</div>
+			<div>
+				<label for="exampleTextarea" class="form-label mt-4">Commentaire</label>
+				<textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+			</div>
+			<div>
+				<label for="formFile" class="form-label mt-4">Veuillez joindre une photo</label>
+				<input class="form-control" type="file" id="formFile">
+			</div>
+
+
+			<button type="submit" class="btn btn-primary">Envoyer</button>
+		</fieldset>
+	</form>
+</section>{% endblock %}

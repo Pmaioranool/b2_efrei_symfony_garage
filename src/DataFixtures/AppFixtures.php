@@ -37,6 +37,7 @@ class AppFixtures extends Fixture
             $manager->persist($article);
         }
 
+
         // Users
         for ($i = 0; $i < 10; $i++) {
             $user = new User();

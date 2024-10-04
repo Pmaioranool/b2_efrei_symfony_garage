@@ -1,10 +1,13 @@
 {% extends 'base.html.twig' %}
 
-
+{% block title %}
+	Page d'avis
+{% endblock %}
 {% block content %}
 	<div class="titrepagecata">
 		<h1>Donnez nous vos avis!</h1>
 	</div>
+
 	<section>
 		{% for rate in rates %}
 			<div class="card mb-3">

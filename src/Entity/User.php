@@ -39,6 +39,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 50)]
     private ?string $fullName = null;
 
+
+    /*
+     *
+     * constructeur
+     *
+     */
+    public function __construct()
+    {
+        $this->roles = ['ROLE_MODÉRATEUR'];
+    }
+
     public function getId(): ?int
     {
         return $this->id;

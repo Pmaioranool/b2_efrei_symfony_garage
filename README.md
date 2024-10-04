@@ -9,6 +9,7 @@ CSS
 fixture
 security_bundle
 Faker
+knp_paginator
 PHP
 
 ## mise en place
@@ -45,3 +46,8 @@ Pour faire marcher ce projet, il vous faudra installer SYMFONY et WAMP ou XAMP (
 `symfony serve:start -d`
 
 `php bin/console doctrine:fixture:load`
+
+
+## projet trello
+
+https://trello.com/b/NEb78xjN/projet

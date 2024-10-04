@@ -48,6 +48,33 @@
 									<a class="nav-link" href="{{ path('home.avis') }}">Avis</a>
 
 								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="{{ path('home.administration_rate') }}">votre avis</a>
+
+
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link" href="{{ path('home.form') }}">Nous Contacter</a>
+
+								</li>
+								{% if is_granted('ROLE_ADMINISTRATEUR') %}
+
+									<li class="nav-item">
+										<a class="nav-link" href="{{ path('home.administration_article') }}">Ajouter un article</a>
+
+
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{{ path('home.administration_user') }}">Ajouter un employé</a>
+
+
+									</li>
+
+
+								{% endif %}
+
+
 							</ul>
 							<div class="d-flex">
 								<a class="nav-link" href="{{ path('security.login') }}">
@@ -65,6 +92,9 @@
 			{% endblock %}
 			{% block section %}{% endblock %}
 			{% block content %}{% endblock %}
+
 		{% endblock %}
+
+
 	</body>
-</html></body></html>
+</html></body></html></body></html>
