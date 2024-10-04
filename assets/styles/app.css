@@ -22,10 +22,9 @@ section {
   justify-content: space-evenly; /* Espacement égal entre les cartes */
 }
 
+article,
 section {
   background-color: rgba(255, 255, 255, 0.721);
-  display: flex;
-  flex-wrap: wrap;
   margin: 6%;
   position: center;
   color: black;

@@ -42,12 +42,20 @@ class AppFixtures extends Fixture
             $user = new User();
             $user->setFullName($this->faker->name())
                 ->setEmail($this->faker->email())
-                ->setRoles(['ROLE_USER'])
+                ->setRoles(['ROLE_MODÉRATEUR'])
                 ->setPlainPassword('password');
 
             $manager->persist($user);
         }
         $manager->flush();
+
+        $user = new User();
+        $user->setFullName("Vincent PARROT")
+            ->setEmail("vincent.parrot@gmail.com")
+            ->setRoles(['ROLE_ADMINISTRATEUR'])
+            ->setPlainPassword('password');
+
+        $manager->persist($user);
 
         for ($i = 0; $i < 10; $i++) {
             $avis = new Rate();

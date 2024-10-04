@@ -1,1 +1,28 @@
 {% extends 'base.html.twig' %}
+
+
+{% block content %}
+	<div class="titrepagecata">
+		<h1>Donnez nous vos avis!</h1>
+	</div>
+	<section>
+		{% for rate in rates %}
+			<div class="card mb-3">
+				<h3 class="card-header">{{rate.name}}</h3>
+
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">{{rate.grade }}
+						etoiles</li>
+					<li class="list-group-item">{{rate.comment }}</li>
+					<li class="list-group-item">{{rate.email}}</li>
+				</ul>
+			</li>
+		</div>
+
+	{% endfor %}
+
+	<div class="navigation">
+		{{ knp_pagination_render(rates) }}
+	</div>
+
+</section>{% endblock %}
