@@ -8,6 +8,7 @@ HTML 5
 CSS
 fixture
 security_bundle
+Faker
 PHP
 
 ## mise en place
@@ -39,3 +40,8 @@ Le modérateur peut seulement trier les avis tandis que l'administrateur à plei
 
 Pour faire marcher ce projet, il vous faudra installer SYMFONY et WAMP ou XAMP (Windows)/MAMP (Mac)/LAMP (Unix).
 
+## commandes utiles
+
+`symfony serve:start -d`
+
+`php bin/console doctrine:fixture:load`
